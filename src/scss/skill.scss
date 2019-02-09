@@ -1,0 +1,341 @@
+#skill {
+  background: var(--background);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 6rem;
+
+  h1 {
+    text-align: center;
+    font-size: 6rem;
+    font-weight: lighter;
+    margin-bottom: 2.5rem;
+    text-shadow: 5px 3px 3px black;
+  }
+  
+  .content {
+    max-width: 1200px;
+    min-height: calc(100vh - 6rem);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    font-size: 5px;
+    
+    ul {
+      
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      
+      li {
+        // min-width: 12.5rem;
+        // max-width: 20%;
+        height: 17em;
+        width: 20em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: .5em .5em 0 .5em;
+        
+        svg {
+          width: 11em;
+          height: 11em;
+        }
+        img {
+          width: 11em;
+          height: 11em;
+        }
+        h3 {
+          color: var(--font-color);
+          font-size: 2.2em;
+          text-align: center;
+          font-weight: lighter;
+          margin-top: .8em;
+          // height: 5.5em;
+          text-shadow: 3px 2px 2px black;
+        }
+      }
+    }
+  }
+  #projects {
+    background: var(--dark-background);
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 6rem;
+
+    h1 {
+      margin: 2rem 0;
+    }
+
+    main {
+      // min-height: 100vh;
+      width: 85%;
+      // max-width: 1400px;
+      display: flex;
+      margin: 0 auto;
+
+      aside {
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 25px;
+
+        h2 {
+          font-size: 3rem;
+          letter-spacing: .2rem;
+          text-shadow: 3px 3px 3px black;
+        }
+
+        li {
+          list-style: none;
+          font-size: 3rem;
+          cursor: pointer;
+          margin-top: 2rem;
+          transition: .5s ease-in-out all;
+          margin-left: 1.5rem;
+        }
+
+        .highlight {
+          color: var(--highlight)
+        }
+      }
+      section {
+        width: 85%;
+        max-width: 80vw;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        position: relative;
+
+        .web-project {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 280px;
+          width: 400px;
+          margin-bottom: 3rem;
+          perspective: 10px;
+          transform: translate3d(0, 0, 0);
+          transition: transform 0.6s ease;
+          overflow: hidden;
+          cursor: pointer;
+          box-shadow: 2px 2px 4px 3px rgba(0,0,0,0.5);
+          
+          figure {
+            width: 100%;
+          }
+
+          .thumb-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(0.0);
+            transition: 0.6s ease all;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .thumb-blue {
+              width: 100%;
+              height: 100%;
+              background: var(--highlight);
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 0.7;
+              z-index: -1;
+            }
+            img {
+              opacity: 1;
+              width: 3rem;
+            }
+
+            .white {
+              color: white;
+            }
+          }
+          
+          .hover {
+            transform: scale(1);
+          }
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1100px) {
+  #skill {
+
+    .content {
+      ul {
+        li {
+          width: 15em;
+        }
+      }
+    }
+
+    #projects {
+      
+      main {
+        width: 100%;
+        aside {
+          width: 20%;
+        }
+        section {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  #skill {
+
+    .content {
+      width: 85%;
+    }
+    #projects {
+      main {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        
+        #aside {
+          width: 100%;
+          padding: 0 30px;
+
+          h2 {
+            display: none;
+          }
+          ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+
+            li {
+              margin: 0;
+            }
+          }
+        }
+        section {
+          width: 95%;
+          max-width: 100%;
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  #skill {
+    .content {
+      width: 95%;
+      ul {
+        li {
+          height: 15em;
+          width: 13em;
+          margin: 7px;
+          
+          img {
+            width: 10em;
+            height: 10em;
+          }
+          h3 {
+            font-size: 2em;
+            // font-weight: lighter;
+            margin-top: .8em;
+          }
+        }
+        .non-import {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  #skill {
+    .content {
+      ul {
+        li {
+          width: 12em;
+        }
+      }
+    }
+
+    #projects {
+      main {
+        #aside {
+          ul {
+            li {
+              font-size: 1.6em;
+            }
+          }
+        }
+        section {
+          margin: 0 auto;
+          width: 98%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  #skill {
+    .content {
+      .non-import-small {
+        display: none;
+      }
+      ul {
+        // li {
+        //   height: 15em;
+        //   width: 15em;
+        // }
+      }
+    }
+
+    #projects {
+      padding-top: 1rem;
+      h1 {
+        font-size: 4em;
+      }
+      main {
+        #aside {
+          padding: 0 5px;
+          ul {
+            li {
+              font-size: 1.5em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

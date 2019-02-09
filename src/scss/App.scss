@@ -1,0 +1,52 @@
+.splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  video {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .overlay {
+    position: relative;
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    h1 {
+      font-size: 8rem;
+      letter-spacing: .7rem;
+      position: relative;
+      top: -20px;
+      text-align: center;      
+    }
+  }
+}
+
+#page-container {
+  position: relative;
+  transition: .4s ease-out all;
+}
+
+
+@media screen and (max-aspect-ratio: 16/9) {
+  .splash > video {
+    height: 100%;
+  }
+}
+@media screen and (min-aspect-ratio: 16/9) {
+  .splash > video {
+    width: 100%;
+  }
+}
+
