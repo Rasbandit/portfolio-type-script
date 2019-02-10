@@ -79,7 +79,12 @@ export default class Modal extends Component<ModalProps, ModalState> {
             links.map(item => (
               <a key={item.link} href={item.link} target="_blank" rel="noopener noreferrer">
                 <img src={item.icon} alt={item.alt} />
-                <h4>{item.text}</h4>
+                {
+                  window.innerWidth > 450
+                    ? <h4>{item.text}</h4>
+                    : ''
+
+                }
               </a>
             ))
           }</div>

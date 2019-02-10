@@ -5,7 +5,7 @@ import splash from '../assets/videos/background.m4v';
 export default class Home extends Component {
   render() {
     return (
-      <div >
+      <div>
         <div className="splash">
           <video src={splash} poster={splashImg} autoPlay loop></video>
           <div className="overlay">

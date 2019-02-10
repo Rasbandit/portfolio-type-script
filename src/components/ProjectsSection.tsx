@@ -4,6 +4,8 @@ import { Transition } from 'react-spring'
 import Modal from './Modal';
 import { Project } from '../types'
 
+import { setSize } from '../logic/logic'
+
 interface projectProps {
   projects: Project[],
   filters: string[]
@@ -25,7 +27,7 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
   constructor(props: projectProps) {
     super(props);
 
-    let obj = this.setSize();
+    let obj = setSize();
 
     obj.filter = ''
     obj.showModal = false;
@@ -43,7 +45,7 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
   }
 
   resize = () => {
-    this.setState(this.setSize())
+    this.setState(setSize())
   }
 
   toggleModal = (title: string) => {
@@ -58,68 +60,6 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
       showModal: false
     })
   }
-
-  setSize = () => {
-    var incX;
-    var incY;
-    var columns;
-    var gap;
-    const ratioKeeper = 1.763;
-
-    if (window.innerWidth > 3000) {
-      document.getElementsByTagName('html')[0].style.fontSize = '20px'
-      incX = window.innerWidth / 5;
-      incY = incX / ratioKeeper;
-      columns = 3
-      gap = 60;
-    }
-
-    else if (window.innerWidth <= 3000 && window.innerWidth > 2500) {
-      document.getElementsByTagName('html')[0].style.fontSize = '16px'
-      incX = window.innerWidth / 5;
-      incY = incX / ratioKeeper;
-      columns = 3
-      gap = 50;
-    }
-
-    else if (window.innerWidth <= 2500 && window.innerWidth > 1100) {
-      document.getElementsByTagName('html')[0].style.fontSize = '12px'
-      incX = window.innerWidth / 5;
-      incY = incX / ratioKeeper;
-      columns = 3
-      gap = 40;
-    }
-
-    else if (window.innerWidth <= 1100 && window.innerWidth > 950) {
-      incX = window.innerWidth / 3;
-      incY = incX / ratioKeeper;
-      columns = 2;
-      gap = 25;
-    }
-
-    else if (window.innerWidth <= 950 && window.innerWidth > 700) {
-      incX = window.innerWidth / 2.3;
-      incY = incX / ratioKeeper;
-      columns = 2;
-      gap = 20
-    }
-
-    else if (window.innerWidth <= 700 && window.innerWidth > 500) {
-      incX = window.innerWidth / 1.1;
-      incY = incX / ratioKeeper;
-      columns = 1;
-      gap = 10
-    }
-    else {
-      incX = window.innerWidth / 1.1;
-      incY = incX / ratioKeeper;
-      columns = 1;
-      gap = 5
-    }
-    const obj: any = { incX, incY, columns, gap, x: gap, y: 0 }
-    return obj
-  }
-
 
   render() {
     let { filter, x, y, incX, incY, columns, gap, showModal, title } = this.state;
@@ -168,12 +108,12 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
               {this.props.filters.map(text => (<li className={filter === text ? 'highlight' : ''} onClick={() => this.setState({ filter: text })} key={text}>{text}</li>))}
             </ul>
           </aside>
-          <section>
+          <section style={{ width: (incX * columns) + (columns * gap) + gap }}>
             <Transition
               items={newProjectsArray} keys={item => item.project.title}
               from={{ opacity: 0, }}
               enter={{ opacity: 1, }}
-              leave={{ opacity: 0, top: '10rem', transform: 'translate3d(40rem, 40rem, 0)' }}>
+              leave={{ opacity: 0, top: '10rem', transform: 'translate3d(25rem, 10rem, 0)' }}>
               {
                 item => props => {
                   return <ProjectComp

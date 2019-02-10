@@ -134,3 +134,20 @@
     }
   }
 }
+
+@media (max-width: 450px) {
+  #modal {
+
+    .text {
+      width: 100%;
+      padding:0;
+
+      .links {
+        a {
+          width: 50px;
+        }
+      }
+    }
+
+  }
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import "../scss/nav.scss"
 
 interface NavProps {
@@ -13,9 +13,8 @@ export default class Nav extends Component<NavProps> {
     return (
       <>
         <div className='nav' >
-          <h2>{width > 400 ? 'Todd Rasband' : 'Todd'}</h2>
+          <Link to="/"><h2>Todd Rasband</h2></Link>
           <nav className="desktop">
-            <NavLink to="/" activeClassName="active" exact>Splash</NavLink>
             <NavLink to="/about" activeClassName="active" exact>About</NavLink>
             <NavLink to="/webdev" activeClassName="active">WebDev</NavLink>
             <NavLink to="/adobe" activeClassName="active">Adobe</NavLink>
@@ -28,7 +27,6 @@ export default class Nav extends Component<NavProps> {
           </nav>
         </div>
         <div className={(this.props.showNav ? 'slidein-show' : '') + ' slidein'}>
-          <NavLink to="/" activeClassName="active" exact onClick={() => this.props.toggleNav(false)}>Splash</NavLink>
           <NavLink onClick={() => this.props.toggleNav(false)} to="/about" activeClassName="active" exact>About</NavLink>
           <NavLink onClick={() => this.props.toggleNav(false)} to="/webdev" activeClassName="active">WebDev</NavLink>
           <NavLink onClick={() => this.props.toggleNav(false)} to="/adobe" activeClassName="active">Adobe</NavLink>

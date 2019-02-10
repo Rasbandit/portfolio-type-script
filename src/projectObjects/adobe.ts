@@ -52,7 +52,7 @@ const voyager = { icon: internetSmall, alt: "website Icon", text: "Used In", lin
 import { Collection } from '../types'
 
 const adobeCollection: Collection = {
-  skillSize: '1.6rem',
+  skillSize: '1.4rem',
   skills: [
     {
       img: afterEffects,
