@@ -37,6 +37,7 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
   }
 
   componentDidMount = () => {
+    this.resize()
     window.addEventListener('resize', this.resize)
   }
 
@@ -75,7 +76,11 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
       const item: { project: Project, x: number, y: number } = { project, x, y }
       if (x >= incX * (columns - 1)) {
         x = gap;
-        y += incY + gap;
+        if (gap) {
+          y += incY + gap;
+        } else {
+          y += incY + 15
+        }
       } else {
         x += incX + gap;
       }
@@ -102,13 +107,20 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
         <h1>Projects</h1>
         <main style={{ height: Math.ceil(newProjectsArray.length / columns) * (incY + gap) }}>
           <aside id="aside">
-            <h2>Categories</h2>
+            {/* <h2>Categories</h2> */}
             <ul>
-              <li className={filter === '' ? 'highlight' : ''} onClick={() => this.setState({ filter: '' })}>All</li>
-              {this.props.filters.map(text => (<li className={filter === text ? 'highlight' : ''} onClick={() => this.setState({ filter: text })} key={text}>{text}</li>))}
+              <li onClick={() => this.setState({ filter: '' })}>
+                <span className={filter === '' ? 'highlight' : ''}>All</span>
+              </li>
+              {this.props.filters.map(text => (
+                <li
+
+                  onClick={() => this.setState({ filter: text })}
+                  key={text}><span className={filter === text ? 'highlight' : ''}>{text}</span></li>
+              ))}
             </ul>
           </aside>
-          <section style={{ width: (incX * columns) + (columns * gap) + gap }}>
+          <section id="projects-showcase" >
             <Transition
               items={newProjectsArray} keys={item => item.project.title}
               from={{ opacity: 0, }}

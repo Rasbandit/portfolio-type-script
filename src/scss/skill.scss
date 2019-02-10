@@ -3,6 +3,7 @@
   // width: 100%;
   width: 90%;
   max-width: 110rem;
+  // max-height: 
   margin: 0 auto;
   // margin-left: 40px;
   position: absolute;
@@ -13,10 +14,11 @@
   overflow-y: scroll;
   overflow-x: hidden;
   padding-top: 5rem;
+  box-shadow: .0rem .0rem .8rem .8rem rgba(0,0,0,0.6);
 
   h1 {
     text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: lighter;
     margin-bottom: 2.5rem;
     text-shadow: .5rem .3rem .3rem black;
@@ -31,7 +33,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 85%;
     font-size: .5rem;
     
     ul {
@@ -68,11 +70,9 @@
     background: var(--dark-background);
     box-sizing: border-box;
     min-height: 80vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     padding-top: 4rem;
     transition: .6s ease-in all;
+    // width: calc(100% - 2px);
     
     h1 {
       margin: 2rem 0;
@@ -82,38 +82,48 @@
       transition: .6s ease-in-out all;
       width: 95%;
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      // justify-content: space-around;
       margin: 0 auto;
 
       aside {
-        // width: 15%;
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        // align-items: center;
-        // padding-left: 2.5rem;
+        flex-direction: row;
 
         h2 {
-          font-size: 3rem;
+          font-size: 2.5rem;
           letter-spacing: .2rem;
           text-shadow: .3rem .3rem .3rem black;
         }
 
-        li {
-          list-style: none;
-          font-size: 2.5rem;
-          cursor: pointer;
-          margin-top: 1.5rem;
-          transition: .5s ease-in-out all;
-          margin-left: 1.7rem;
+        ul {
+          display: flex;
+          width: 100%;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          margin-bottom: 2.2rem;
+          li {
+            list-style: none;
+            cursor: pointer;
+            transition: .5s ease-in-out all;
+            text-align: center;
+            margin: 0 .8rem 1.8rem .8rem;
+            width: 225px;
+            span {
+              font-size: 3rem;
+              border-bottom: 1px solid white;
+            }
+          }
         }
-
+        
         .highlight {
-          color: var(--highlight)
+          color: var(--highlight);
+          border-bottom: 1px solid var(--highlight);
         }
       }
       section {
-        width: 80%;
-        max-width: 80vw;
+        width: 100%;
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
@@ -132,7 +142,7 @@
           transition: transform 0.6s ease;
           overflow: hidden;
           cursor: pointer;
-          box-shadow: .2rem .2rem .4rem .3rem rgba(0,0,0,0.5);
+          box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.2);
           
           figure {
             width: 100%;
@@ -183,9 +193,10 @@
     }
   }
   .spacer {
-    height: 7rem;
+    height: 15rem;
   }
 }
+
 
 
 @media (max-width: 1100px) {
@@ -198,60 +209,13 @@
         }
       }
     }
-
-    #projects {
-      
-      main {
-        width: 95%;
-        aside {
-          width: 20%;
-        }
-        section {
-          width: 80%;
-        }
-      }
-    }
   }
 }
 
 @media (max-width: 950px) {
   #skill {
-
     .content {
       width: 85%;
-    }
-    #projects {
-      main {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100%;
-        
-        #aside {
-          width: 100%;
-          padding: 0 4rem;
-
-          h2 {
-            display: none;
-          }
-          ul {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 3rem;
-
-            li {
-              margin: 0;
-              font-size: 3rem;
-            }
-          }
-        }
-        section {
-          width: 95%;
-          max-width: 100%;
-          height: 10rem;
-        }
-      }
     }
   }
 }
@@ -280,25 +244,13 @@
         }
       }
     }
-  }
-}
-
-@media (max-width: 500px) {
-  #skill {
-    .content {
-      ul {
-        li {
-          width: 12em;
-        }
-      }
-    }
-
-    #projects {
+      #projects {
       main {
         #aside {
           ul {
             li {
               font-size: 1.6em;
+              width: auto;
             }
           }
         }
@@ -311,28 +263,23 @@
   }
 }
 
+@media (max-width: 500px) {
+  #skill {
+    .content {
+      ul {
+        li {
+          width: 12em;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 400px) {
   #skill {
     .content {
       .non-import-small {
         display: none;
-      }
-    }
-
-    #projects {
-      padding-top: 1rem;
-      h1 {
-        font-size: 4em;
-      }
-      main {
-        #aside {
-          padding: 0 .5rem;
-          ul {
-            li {
-              font-size: 1.5em;
-            }
-          }
-        }
       }
     }
   }

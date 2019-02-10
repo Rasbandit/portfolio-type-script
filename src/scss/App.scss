@@ -1,6 +1,6 @@
 .splash {
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   top: 0;
   left: 0;
   width: 100%;
@@ -14,23 +14,25 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  
-  .overlay {
-    position: relative;
-    width:100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: -1;
+}
 
-    h1 {
-      font-size: 8rem;
-      letter-spacing: .7rem;
-      position: relative;
-      top: -2rem;
-      text-align: center;      
-    }
+.home-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width:100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // z-index: -;
+
+  h1 {
+    font-size: 8rem;
+    letter-spacing: .7rem;
+    position: relative;
+    top: -2rem;
+    text-align: center;      
   }
 }
 
@@ -39,6 +41,16 @@
   transition: .4s ease-out all;
 }
 
+
+@media (max-size: 600px) {
+  .home-overlay {
+
+  
+    h1 {
+      font-size: 6rem;   
+    }
+  }
+}
 
 @media screen and (max-aspect-ratio: 16/9) {
   .splash > video {

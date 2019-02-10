@@ -8,7 +8,7 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-  box-shadow: .2rem .3rem .1rem .3rem rgba(0, 0, 0, 0.4);
+  box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.3);
   
   figure {
     width: 65%;
@@ -16,12 +16,12 @@
     
     #modalVideo {
       width: 100%;
-      box-shadow: .1rem 0rem .2rem .2rem rgba(0,0,0,0.3);
+      box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.3);
     }
     
     img {
       width: 100%;
-      box-shadow: .3rem .1rem .4rem .3rem rgba(0, 0, 0, 0.3);
+      box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.3);
       position: absolute;
       top: 0;
       left: 0;
@@ -47,8 +47,11 @@
       font-size: 1.8rem;
       text-indent: 5rem;
       line-height: 2.4rem;
-      box-shadow: inset 0 0 .4rem .4rem rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
+      // box-shadow: inset 0 0 .4rem .4rem rgba(0, 0, 0, 0.1);
+      // padding: 1.5rem;
+    }
+    p::-webkit-scrollbar {
+      width: .3rem;
     }
     .links {
       height: 4rem;

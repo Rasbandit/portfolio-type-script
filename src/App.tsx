@@ -19,8 +19,6 @@ import About from './components/About';
 import splashImg from './assets/work/splash.jpg';
 import splash from './assets/videos/background.m4v';
 
-import { setSize } from './logic/logic'
-
 import './scss/App.scss'
 
 
@@ -28,7 +26,7 @@ class App extends Component<{}, { showNav: boolean }> {
   constructor(props: object) {
     super(props);
 
-    setSize()
+    this.setREM()
 
     this.state = {
       showNav: false
@@ -40,11 +38,28 @@ class App extends Component<{}, { showNav: boolean }> {
   }
 
   componentDidMount = () => {
-    window.addEventListener('resize', setSize)
+    window.addEventListener('resize', this.setREM)
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener('resize', setSize)
+    window.removeEventListener('resize', this.setREM)
+  }
+
+  setREM() {
+    if (window.innerWidth > 3000) {
+      document.getElementsByTagName('html')[0].style.fontSize = '20px'
+    }
+    else if (window.innerWidth <= 3000 && window.innerWidth > 2500) {
+      document.getElementsByTagName('html')[0].style.fontSize = '16px'
+    }
+    else if (window.innerWidth <= 2500 && window.innerWidth > 1900) {
+      document.getElementsByTagName('html')[0].style.fontSize = '14px'
+    }
+    else if (window.innerWidth <= 1900 && window.innerWidth > 1600) {
+      document.getElementsByTagName('html')[0].style.fontSize = '12px'
+    } else {
+      document.getElementsByTagName('html')[0].style.fontSize = '10px'
+    }
   }
 
   render() {

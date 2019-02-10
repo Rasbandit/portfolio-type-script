@@ -41,6 +41,7 @@ body {
 .fade-enter {
   opacity: 0;
   z-index: 2;
+  /* transition: opacity 700ms ease-in; */
 }
 
 .fade-enter.fade-enter-active {
@@ -49,7 +50,9 @@ body {
 }
 
 .fade-exit-active {
-  z-index: -1;
+  transition: opacity 700ms ease-in;
+  opacity: 0;
+  /* z-index: -1; */
 }
 
 .other {
@@ -67,7 +70,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: .7rem;
+  width: 0rem;
 }
 
 /* Track */
