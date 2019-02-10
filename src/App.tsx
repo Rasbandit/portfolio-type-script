@@ -6,13 +6,15 @@ import {
   Route,
 } from "react-router-dom";
 
+
 import webDevObject from './projectObjects/webDev';
 import adobeObject from './projectObjects/adobe';
 import educationObject from './projectObjects/education';
 
-import Home from './components/Home'
+import Home from './components/Home';
 import Nav from './components/Nav';
-import Page from './components/Page'
+import Page from './components/Page';
+import About from './components/About';
 
 
 import './scss/App.scss'
@@ -27,9 +29,10 @@ class App extends Component<{}, { showNav: boolean }> {
     }
   }
 
-  toggleNav = (showNav: boolean = !this.state.showNav) => {
+  toggleNav = (showNav = !this.state.showNav) => {
     this.setState({ showNav })
   }
+
 
   render() {
 
@@ -49,7 +52,7 @@ class App extends Component<{}, { showNav: boolean }> {
                   >
                     <Switch location={location}>
                       <Route exact path="/" component={Home} />
-                      <Route exact path="/about" component={Home} />
+                      <Route exact path="/about" component={About} />
                       <Route exact path="/webdev" render={(props) => <Page {...props} {...webDevObject} />} />
                       <Route exact path="/adobe" render={(props) => <Page {...props} {...adobeObject} />} />
                       <Route exact path="/education" render={(props) => <Page {...props} {...educationObject} />} />

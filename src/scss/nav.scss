@@ -8,18 +8,17 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--dark-background);
-  height: 6rem;
+  height: 4.5rem;
   position: fixed;
-  top: 0px;
+  top: 0rem;
   z-index: 4;
   box-shadow: var(--shadow);
   
   h2 {
-    background-color: none;
-    font-size: 3.5rem;
-    margin-left: 20px;
+    font-size: 2.5rem;
+    margin-left: 2rem;
     color: var(--highlight);
-    text-shadow: 4px 3px 4px black;
+    text-shadow: .4rem .3rem .4rem black;
   }
 
   .desktop {
@@ -32,14 +31,14 @@
     justify-content: space-between;
     width: 5rem;
     height: 3.5rem;
-    margin-right: 20px;
+    margin-right: 2rem;
     cursor: pointer;
     
     .bar {
       width: 100%;
       height: 20%;
       background: white;
-      border-radius: 5px;
+      border-radius: .5rem;
       transition: .5s ease all;
       box-shadow: var(--shadow);
     }
@@ -55,7 +54,7 @@
     
     a {
       background-color: var(--dark-background);
-      margin-right: 20px;
+      margin-right: 2rem;
       cursor: pointer;
       transition: .7s ease all;
       text-decoration: none;
@@ -72,8 +71,8 @@
   position: fixed;
   height: 100vh;
   background: #353941;
-  width: 250px;
-  right: -250px;
+  width: 25rem;
+  right: -25rem;
   z-index: 3;
   transition: .4s ease-out all;
   box-shadow: var(--shadow);
@@ -90,7 +89,7 @@
       font-weight: lighter;
       letter-spacing: .1rem;
       margin-top: 3rem;
-      text-shadow: 4px 3px 4px black;
+      text-shadow: .4rem .3rem .4rem black;
   }
 }
 
@@ -99,7 +98,7 @@
 }
 
 .slidein-show {
-  right: 0px
+  right: 0rem
 }
 
 

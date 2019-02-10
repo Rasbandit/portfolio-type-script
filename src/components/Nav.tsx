@@ -21,7 +21,7 @@ export default class Nav extends Component<NavProps> {
             <NavLink to="/adobe" activeClassName="active">Adobe</NavLink>
             <NavLink to="/education" activeClassName="active">Education</NavLink>
           </nav>
-          <nav className="mobile" onClick={() => this.props.toggleNav()} >
+          <nav className="mobile" onClick={() => this.props.toggleNav(undefined)} >
             <div className="bar"></div>
             <div className="bar"></div>
             <div className="bar"></div>

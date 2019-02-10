@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
-import WebDevProject from './Project';
+import ProjectComp from './Project';
 import { Transition } from 'react-spring'
 import Modal from './Modal';
+import { Project } from '../types'
 
-export default class ProjectsSection extends Component {
-  constructor() {
-    super();
+interface projectProps {
+  projects: Project[],
+  filters: string[]
+}
+
+interface StateObj {
+  incX: number,
+  incY: number,
+  columns: number,
+  gap: number,
+  x: number,
+  y: number,
+  filter: string,
+  showModal: boolean,
+  title: string
+}
+
+export default class ProjectsSection extends Component<projectProps, StateObj> {
+  constructor(props: projectProps) {
+    super(props);
 
     let obj = this.setSize();
 
@@ -28,7 +46,7 @@ export default class ProjectsSection extends Component {
     this.setState(this.setSize())
   }
 
-  toggleModal = (title) => {
+  toggleModal = (title: string) => {
     this.setState({
       showModal: true,
       title: title
@@ -48,11 +66,28 @@ export default class ProjectsSection extends Component {
     var gap;
     const ratioKeeper = 1.763;
 
-    if (window.innerWidth > 1100) {
+    if (window.innerWidth > 3000) {
+      document.getElementsByTagName('html')[0].style.fontSize = '20px'
       incX = window.innerWidth / 5;
       incY = incX / ratioKeeper;
       columns = 3
-      gap = 35;
+      gap = 60;
+    }
+
+    else if (window.innerWidth <= 3000 && window.innerWidth > 2500) {
+      document.getElementsByTagName('html')[0].style.fontSize = '16px'
+      incX = window.innerWidth / 5;
+      incY = incX / ratioKeeper;
+      columns = 3
+      gap = 50;
+    }
+
+    else if (window.innerWidth <= 2500 && window.innerWidth > 1100) {
+      document.getElementsByTagName('html')[0].style.fontSize = '12px'
+      incX = window.innerWidth / 5;
+      incY = incX / ratioKeeper;
+      columns = 3
+      gap = 40;
     }
 
     else if (window.innerWidth <= 1100 && window.innerWidth > 950) {
@@ -75,36 +110,36 @@ export default class ProjectsSection extends Component {
       columns = 1;
       gap = 10
     }
-    else if (window.innerWidth <= 500) {
+    else {
       incX = window.innerWidth / 1.1;
       incY = incX / ratioKeeper;
       columns = 1;
       gap = 5
     }
-    return { incX, incY, columns, gap, x: gap, y: 0 }
+    const obj: any = { incX, incY, columns, gap, x: gap, y: 0 }
+    return obj
   }
 
 
   render() {
     let { filter, x, y, incX, incY, columns, gap, showModal, title } = this.state;
 
-    let projectsArray = [...this.props.projects];
+    let projectsArray: Project[] = [...this.props.projects];
 
     if (this.state.filter) {
       projectsArray = projectsArray
-        .filter(project => project.type === filter)
+        .filter((project: Project) => project.type.includes(filter))
     }
 
-    projectsArray = projectsArray.map(project => {
-      project.x = x;
-      project.y = y;
+    const newProjectsArray: { x: number, y: number, project: Project }[] = projectsArray.map(project => {
+      const item: { project: Project, x: number, y: number } = { project, x, y }
       if (x >= incX * (columns - 1)) {
         x = gap;
         y += incY + gap;
       } else {
         x += incX + gap;
       }
-      return project
+      return item
     })
 
     const indexOfProject = this.props.projects.findIndex((item) => item.title === title)
@@ -118,12 +153,14 @@ export default class ProjectsSection extends Component {
           from={{ opacity: 0, scale: 0 }}
           enter={{ opacity: 1, scale: 1 }}
           leave={{ opacity: 0, scale: 0 }}>
-          {show =>
-            show && (({ opacity, scale }) => <div id='modal-overlay' style={{ opacity }} onClick={this.hideModal}><Modal project={this.props.projects[indexOfProject]} scale={{ scale }} /></div>)
+          {(show: boolean) =>
+            show && (({ opacity, scale }) => <div id='modal-overlay' style={{ opacity }} onClick={this.hideModal}>
+              <Modal project={this.props.projects[indexOfProject]} scale={{ scale }} />
+            </div>)
           }
         </Transition>
         <h1>Projects</h1>
-        <main style={{ height: Math.ceil(projectsArray.length / columns) * (incY + gap) }}>
+        <main style={{ height: Math.ceil(newProjectsArray.length / columns) * (incY + gap) }}>
           <aside id="aside">
             <h2>Categories</h2>
             <ul>
@@ -133,18 +170,27 @@ export default class ProjectsSection extends Component {
           </aside>
           <section>
             <Transition
-              items={projectsArray} keys={item => item.title}
+              items={newProjectsArray} keys={item => item.project.title}
               from={{ opacity: 0, }}
               enter={{ opacity: 1, }}
-              leave={{ opacity: 0, top: 100, transform: 'translate3d(400px, 400px, 0)' }}>
+              leave={{ opacity: 0, top: '10rem', transform: 'translate3d(40rem, 40rem, 0)' }}>
               {
                 item => props => {
-                  return (<WebDevProject {...item} style={props} width={incX} height={incY} selectProject={this.toggleModal} />)
+                  return <ProjectComp
+                    project={item.project}
+                    x={item.x}
+                    y={item.y}
+                    style={props}
+                    width={incX}
+                    height={incY}
+                    selectProject={this.toggleModal}
+                  />
                 }
               }
             </Transition>
           </section>
         </main>
+        <div className="spacer" />
       </div>
     )
   }

@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import search from '../assets/icons/search.svg'
+import { Project } from '../types'
 
-export default class WebDevProject extends Component {
+interface thisProps {
+  project: Project
+  x: number,
+  y: number,
+  style: {opacity: number, top?: number, transform?: string},
+  width: number,
+  height: number,
+  selectProject: (title: string) => void
+}
+
+export default class WebDevProject extends Component<thisProps, { hover: boolean }> {
   state = {
     hover: false
   }
 
   render() {
-    let { imgMedium, title, style, x, y, width, selectProject } = this.props
+    let { project: {title, imgMedium}, style, x, y, width, selectProject } = this.props
     const { hover } = this.state
     let newStyle = { ...style }
     if (newStyle.transform) {

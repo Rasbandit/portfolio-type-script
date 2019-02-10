@@ -1,6 +1,8 @@
 import React from 'react';
+import { Skill } from '../types'
 
-export default function Skills({ skills, fontSize }) {
+export default function Skills(props: { skills: Skill[], fontSize: string }) {
+  const { skills, fontSize } = props
   return (
     <div className="content">
       <h1>Skills</h1>

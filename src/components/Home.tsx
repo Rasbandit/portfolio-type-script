@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import splash from '../assets/videos/splash.m4v';
 import splashImg from '../assets/work/splash.jpg';
-
-// interface HomeProps {
-//   style: {}
-// }
+import splash from '../assets/videos/background.m4v';
 
 export default class Home extends Component {
   render() {
