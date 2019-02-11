@@ -16,87 +16,99 @@
         max-width: 110rem;
         height: 100%;
         background: var(--background);
-        // border-radius: .4rem;
         box-shadow: var(--shadow);
         display: flex;
-        padding: 10rem 1.4rem 6rem 1.4rem;
+        justify-content: center;
         align-items: center;
-        // justify-items: stretch;
-        // align-items: stretch;
+        padding-top: 5rem;
+
+
+        .container {
+          display: flex;
+          padding: 1.6rem 1.6rem;
+          align-items: center;
+          background: var(--dark-background);
+          height: 80%;
+          width: 100%;
+        
 
         figure {
           height: 100%;
           max-height: 680px;
-          // width: 330px;
           position: relative;
           box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.3);
+          width: 30%;
+          overflow: hidden;
           
           img {
             height: 100%;
             width: auto;
-          }
-        }
-        div {
-          width: 100%;
-          height: auto;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          
-          h2 {
-            font-size: 3.5rem;
-            letter-spacing: .3rem;
-          }
-          
-          section {
-            overflow-y: scroll;
-            margin-top: 1rem;
-            
-            p {
-              padding: 0rem 1rem .5rem 2rem;
-              font-size: 1.8rem;
-              line-height: 2.5rem;
-              text-indent: 5rem;
-            }
-          }
-          section::-webkit-scrollbar {
-            width: .3rem;
-          }
-        }
-      }
-    
-}
-
-@media (max-width: 1080px) {
-  #About {
-   
-        
-        main {
-          // height: 90%;
-  
-          figure {
-            width: 50%;
             height: 100%;
-            overflow: hidden;
-            
-            img {
-              height: 100%;
               bottom: 20px;
               position: absolute;
               left: 50%;
               top: 50%;
               transform: translate(-50%, -50%);
-            }
           }
         }
-  }
+        div {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+          h2 {
+            font-size: 3.7rem;
+            letter-spacing: .3rem;
+          }
+
+          ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            margin: 1rem 0;
+
+            li {
+              font-size: 2.4rem;
+              cursor: pointer;
+              border-bottom: 1px solid white;
+              padding-bottom: .6rem;
+              transition: .6s ease all;
+              font-weight: bold;
+            }
+            
+            .selected {
+              color: var(--highlight);
+              border-color: var(--highlight);
+            }
+          }
+          
+          section {
+            overflow-y: scroll;
+            margin-top: 1rem;
+            width: 100%;
+            
+            p {
+              padding: 0rem 1rem .5rem 2.5rem;
+              font-size: 2rem;
+              line-height: 2.7rem;
+              text-indent: 5rem;
+              width: 100%;
+            }
+          }
+          section::-webkit-scrollbar {
+            width: .4rem;
+          }
+        }
+      }
+    }
 }
 
 @media (max-width: 1080px) and (orientation: landscape) {
   #About {
     main {
       padding: 5rem 1rem 1rem 1rem;
-          // height: 90%;
   
           figure {
             width: 50%;
@@ -123,46 +135,53 @@
       }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 800px) {
   #About {
   
         main {
-          flex-direction: column;
           height: 100%;
-          padding: 6rem 1rem 1.5rem 1rem;
+          padding: 6rem 0rem 1.5rem 0rem;
+          
+          .container {
+            flex-direction: column;
+            height: 95%;
+  
   
           figure {
-            height: 40%;
+            height: 45%;
             width: 100%;
-            overflow: hidden;
             
             img {
               width: 100%;
               height: auto;
-              position: relative;
               top: -25px;
               left: 0;
-              // bottom: 20px;
               transform: none;
             }
           }
           div {
-            height: 60%;
+            height: 55%;
             h2 {
-              font-size: 2.5rem;
+              font-size: 3rem;
+            }
+
+            ul {
+              margin: .6rem 0;
             }
             section {
               height: 100%;
               padding: 0 .3rem;
               margin: 1rem 0 0 0;
               p {
-                padding: 0 0 .3rem 0;
-                font-size: 1.4rem;
-                line-height: 1.7rem;
+                padding: 0 0 .7rem 0;
+                font-size: 2rem;
+                line-height: 2.5rem;
                 text-indent: 3rem;
+                text-align: justify;
               }
             }
           }
+        }
         }
       }
 }
@@ -183,7 +202,6 @@
               width: 100%;
               height: auto;
               position: relative;
-              // bottom: 20px;
               top: 0;
               transform: none;
             }

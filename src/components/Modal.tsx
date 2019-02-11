@@ -7,8 +7,9 @@ interface ModalState {
 }
 
 interface ModalProps {
-  project: Project
-  scale: { scale: number }
+  project: Project,
+  scale: { scale: number },
+  hideModal: () => void
 }
 
 export default class Modal extends Component<ModalProps, ModalState> {
@@ -18,6 +19,11 @@ export default class Modal extends Component<ModalProps, ModalState> {
 
   componentDidMount = () => {
     this.setHeight()
+    window.addEventListener('keydown', this.closeModalOnEscape)
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('keydown', this.closeModalOnEscape)
   }
 
   componentDidUpdate = () => {
@@ -35,7 +41,7 @@ export default class Modal extends Component<ModalProps, ModalState> {
   setHeight = () => {
     let height: number = 0
     if (window.innerWidth > 1300) {
-      const node = document.querySelector('#modalVideo') || document.querySelector('#modalImage')
+      const node: HTMLElement | null = document.querySelector('#modalVideo') || document.querySelector('#modalImage')
       if (node) {
         height = node.clientHeight + 20
       }
@@ -43,6 +49,12 @@ export default class Modal extends Component<ModalProps, ModalState> {
     this.setState({
       height
     })
+  }
+
+  closeModalOnEscape = (e: any) => {
+    if (e.keyCode === 27) {
+      this.props.hideModal()
+    }
   }
 
 

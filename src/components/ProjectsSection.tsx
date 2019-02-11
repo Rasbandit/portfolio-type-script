@@ -100,14 +100,13 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
           leave={{ opacity: 0, scale: 0 }}>
           {(show: boolean) =>
             show && (({ opacity, scale }) => <div id='modal-overlay' style={{ opacity }} onClick={this.hideModal}>
-              <Modal project={this.props.projects[indexOfProject]} scale={{ scale }} />
+              <Modal project={this.props.projects[indexOfProject]} scale={{ scale }} hideModal={this.hideModal} />
             </div>)
           }
         </Transition>
         <h1>Projects</h1>
         <main style={{ height: Math.ceil(newProjectsArray.length / columns) * (incY + gap) }}>
           <aside id="aside">
-            {/* <h2>Categories</h2> */}
             <ul>
               <li onClick={() => this.setState({ filter: '' })}>
                 <span className={filter === '' ? 'highlight' : ''}>All</span>

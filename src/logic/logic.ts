@@ -38,7 +38,7 @@ export function setSize() {
     }
 
     else if (window.innerWidth <= 2000 && window.innerWidth > 1600) {
-      columns = 3
+      columns = 4
       gap = 25;
     }
 
@@ -51,8 +51,8 @@ export function setSize() {
       gap = 20;
     }
     else {
-      columns = 1;
-      gap = 0
+      columns = 2;
+      gap = 10
     }
 
     incX = (showCaseContainer.clientWidth / columns) - (gap * 1.5)

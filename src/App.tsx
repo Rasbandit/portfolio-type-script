@@ -47,18 +47,16 @@ class App extends Component<{}, { showNav: boolean }> {
 
   setREM() {
     if (window.innerWidth > 3000) {
-      document.getElementsByTagName('html')[0].style.fontSize = '20px'
-    }
-    else if (window.innerWidth <= 3000 && window.innerWidth > 2500) {
       document.getElementsByTagName('html')[0].style.fontSize = '16px'
     }
-    else if (window.innerWidth <= 2500 && window.innerWidth > 1900) {
-      document.getElementsByTagName('html')[0].style.fontSize = '14px'
+    else if (window.innerWidth <= 3000 && window.innerWidth > 2500) {
+      document.getElementsByTagName('html')[0].style.fontSize = '13px'
     }
-    else if (window.innerWidth <= 1900 && window.innerWidth > 1600) {
-      document.getElementsByTagName('html')[0].style.fontSize = '12px'
-    } else {
+    else if (window.innerWidth <= 2500 && window.innerWidth > 1900) {
       document.getElementsByTagName('html')[0].style.fontSize = '10px'
+    }
+    else {
+      document.getElementsByTagName('html')[0].style.fontSize = '9px'
     }
   }
 

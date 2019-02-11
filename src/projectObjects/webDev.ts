@@ -8,11 +8,9 @@ import node from '../assets/work/webDev/icons/nodejs.svg';
 import postgres from '../assets/work/webDev/icons/postgresql.svg';
 import sass from '../assets/work/webDev/icons/sass.svg';
 import jest from '../assets/work/webDev/icons/jest.svg';
-import github from '../assets/work/webDev/icons/github.svg';
 import socket from '../assets/work/webDev/icons/socket-io.svg';
-import html from '../assets/work/webDev/icons/html.svg';
-import css from '../assets/work/webDev/icons/css3.svg';
 import express from '../assets/work/webDev/icons/express.svg';
+import typeScript from '../assets/work/webDev/icons/ts.svg';
 
 //link Icons
 import internetSmall from '../assets/icons/internet-small.svg';
@@ -46,6 +44,11 @@ const webDevCollection: Collection = {
       className: ''
     },
     {
+      img: typeScript,
+      title: "TypeScript",
+      className: ''
+    },
+    {
       img: react,
       title: "React",
       className: ''
@@ -54,16 +57,6 @@ const webDevCollection: Collection = {
       img: angular,
       title: "Angular.js",
       className: ''
-    },
-    {
-      img: html,
-      title: "HTML 5",
-      className: 'non-import'
-    },
-    {
-      img: css,
-      title: "CSS 3",
-      className: 'non-import'
     },
     {
       img: express,
@@ -101,11 +94,6 @@ const webDevCollection: Collection = {
       className: 'non-import-small'
     },
     {
-      img: github,
-      title: "GitHub",
-      className: 'non-import'
-    },
-    {
       img: socket,
       title: "Socket.io",
       className: ''
@@ -117,7 +105,7 @@ const webDevCollection: Collection = {
       videoMedium: asteroidsVideoMedium,
       videoLarge: asteroidsVideoLarge,
       title: 'Asteroids',
-      text: 'I wanted to learn sockets.io and and the canvas API in HTML 5. I found a tutorial on how to build some basics in canvas and I later built asteroids and included a server to manage all the state on so it could live update all connected computers using sockets, allowing you to jointly control a ship.',
+      text: 'I had this idea for a simple game where you could asteroids in a co-oprative way where one person could fly the ship, and another could shoot. I knew I would need to learn how exactly the HTML canvas API worked so I found a lot of tutorials and after a long time was able to build out this application. But it was only single player, so I had to do a lot of refactoring to adjust for a lot of different factors. First I needed to use sockets so that the players could have real time updates between their clients. This forced to to move most of the logic into a server and make the server into the host of the game that would broadcast out to all the connect clients what the state of the game was. Because of this I learned how to use sockets and how to do state manetment on the server over a socket connection.',
       type: ['Vanilla js'],
       links: [{ icon: internetSmall, alt: "Website", text: "Website", link: 'https:asteroids.toddrasband.com/' }, { icon: gitHubSmall, alt: "github", text: "Repo", link: 'https:github.com/Rasbandit/Asteroids-canvas-sockets' }]
     },
@@ -125,7 +113,7 @@ const webDevCollection: Collection = {
       imgMedium: sarahMedium,
       imgLarge: sarahLarge,
       title: "Sarah's Paw Prints",
-      text: "This site was designed by me and created to show off the portfolio of a friend. This was the first site I made with the intent to be viewed on as many devices and browsers as possible because of this careful attention was given to responsiveness. I used amazon S3 for file storage and am working on giving the owner the ability to upload and manage the photos on the site.",
+      text: "I designed and created this site for a friend to showcase their art protfolio and so others could get in contact with her to commision art using NodeMailer. This was also my first attempt at actually putting a site into production so a lot of care was given to making sure the site was responsive and looked good on all screen sizes. I had to do a bit of image compressing to ensure the load times was as fast as it could be. I also built an admin interface so she could add more images by uploading them to Amazon-s3 and I keep the url's in a PostgreSQL database.",
       type: ['Angular.js'],
       links: [{ icon: internetSmall, alt: "Website", text: "Website", link: 'https:sarahspawprints.toddrasband.com/' }, { icon: gitHubSmall, alt: "github", text: "Repo", link: 'https:github.com/Rasbandit/sarahs-paw-print' }]
     },
@@ -133,7 +121,7 @@ const webDevCollection: Collection = {
       imgMedium: houserMedium,
       imgLarge: houserLarge,
       title: "Houser Helper",
-      text: "I started this site as a review for a class I was teching to use React.js, Redux, and Node.js. The review lasted 3 days and after a few more days work I finished this site.",
+      text: "I started this project as a review for my class while in Arizona that lasted 3 days. Because I had already put so much time into it I wanted to finish it off. I used React.js, Node, Express and PostgreSQL. This was the first Full-Stack project I built using React and it really helped me solidify my understanding of it.",
       type: ['React'],
       links: [{ icon: internetSmall, alt: "Website", text: "Website", link: 'https:houserhelper.toddrasband.com/' }, { icon: gitHubSmall, alt: "github", text: "Repo", link: 'https:github.com/Rasbandit/Houser-Helper' }]
     },
@@ -141,7 +129,7 @@ const webDevCollection: Collection = {
       imgMedium: pokemonMedium,
       imgLarge: pokemonLarge,
       title: "Pokemon Catcher",
-      text: "I made this using React.js and Node.js in an evening as an example to the students at DevMountain of what a small project could look like.",
+      text: "At DevMountain the first project we have students build we called the 'no-db' project. I created this in an evening as an example of what the project could look like. It used the Pokemon Api as its base and all the information of what pokemon was caught is stored on a server. The purpose of the project was to show of how full CRUD works using an express server.",
       type: ['React'],
       links: [{ icon: internetSmall, alt: "Website", text: "Website", link: 'https:pokemon.toddrasband.com/' }, { icon: gitHubSmall, alt: "github", text: "Repo", link: 'https:github.com/Rasbandit/Pokemon-Catcher-No-Database' }]
     },
@@ -156,7 +144,7 @@ const webDevCollection: Collection = {
       imgMedium: threadlessMedium,
       imgLarge: threadlessLarge,
       title: "Threadless Clone",
-      text: "This site was cloned using AngularJS, NodeJS and PostgreSQL. I built this over 3 weeks as my first full stack project.",
+      text: "This ",
       type: ['Angular.js'],
       links: [{ icon: internetSmall, alt: "Website", text: "Website", link: 'https:threadless.toddrasband.com/' }, { icon: gitHubSmall, alt: "github", text: "Repo", link: 'https:github.com/Rasbandit/threadless-clone' }]
     }
