@@ -36,38 +36,40 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
     this.state = obj;
   }
 
-  componentDidMount = () => {
+  public componentDidMount = () => {
     this.resize()
     window.addEventListener('resize', this.resize)
   }
 
-  componentWillUnmount = () => {
+  public componentWillUnmount = () => {
     window.removeEventListener('resize', this.resize)
   }
 
-  resize = () => {
+  private resize = () => {
     this.setState(setSize())
   }
 
-  toggleModal = (title: string) => {
+  public toggleModal = (title: string) => {
     this.setState({
       showModal: true,
       title: title
     })
   }
 
-  hideModal = () => {
+  public hideModal = () => {
     this.setState({
       showModal: false
     })
   }
 
-  render() {
+  public render() {
     let { filter, x, y, incX, incY, columns, gap, showModal, title } = this.state;
+    const { projects } = this.props
 
-    let projectsArray: Project[] = [...this.props.projects];
 
-    if (this.state.filter) {
+    let projectsArray: Project[] = [...projects];
+
+    if (filter) {
       projectsArray = projectsArray
         .filter((project: Project) => project.type.includes(filter))
     }
@@ -87,7 +89,7 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
       return item
     })
 
-    const indexOfProject = this.props.projects.findIndex((item) => item.title === title)
+    const indexOfProject: number = projects.findIndex((item) => item.title === title)
 
 
     return (
@@ -100,7 +102,7 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
           leave={{ opacity: 0, scale: 0 }}>
           {(show: boolean) =>
             show && (({ opacity, scale }) => <div id='modal-overlay' style={{ opacity }} onClick={this.hideModal}>
-              <Modal project={this.props.projects[indexOfProject]} scale={{ scale }} hideModal={this.hideModal} />
+              <Modal project={projects[indexOfProject]} scale={{ scale }} hideModal={this.hideModal} />
             </div>)
           }
         </Transition>
@@ -109,7 +111,7 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
           <aside id="aside">
             <ul>
               <li onClick={() => this.setState({ filter: '' })}>
-                <span className={filter === '' ? 'highlight' : ''}>All</span>
+                <span className={!filter ? 'highlight' : ''}>All</span>
               </li>
               {this.props.filters.map(text => (
                 <li

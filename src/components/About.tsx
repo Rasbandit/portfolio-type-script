@@ -9,24 +9,22 @@ interface AboutState {
   story: string
 }
 
-export default class About extends Component<any, AboutState> {
-  state = {
+export default class About extends Component<{}, AboutState> {
+  public state = {
     story: 'general'
   }
 
-  setText(story: string) {
+  private setText(story: string) {
     this.setState({
       story
     })
-    const element = document.getElementById('about-text')
-    // console.log(element)
+    const element: HTMLElement | null = document.getElementById('about-text')
     if (element) {
       element.scrollTo({
-        top: 0, // could be negative value
+        top: 0,
         left: 0,
         behavior: 'smooth'
       });
-      // element.scrollTo(0, 0)
     }
 
   }
@@ -41,7 +39,6 @@ export default class About extends Component<any, AboutState> {
               <img src={portrait} alt="" />
             </figure>
             <div>
-              {/* <h2>My Story</h2> */}
               <ul>
                 <li className={story === 'general' ? 'selected' : ''} onClick={() => this.setText('general')}>General</li>
                 <li className={story === 'web' ? 'selected' : ''} onClick={() => this.setText('web')} > Web Dev</li>

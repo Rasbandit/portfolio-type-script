@@ -13,21 +13,21 @@ interface ModalProps {
 }
 
 export default class Modal extends Component<ModalProps, ModalState> {
-  state = {
+  public state = {
     height: 0
   }
 
-  componentDidMount = () => {
+  public componentDidMount = () => {
     this.setHeight()
     window.addEventListener('keydown', this.closeModalOnEscape)
   }
 
-  componentWillUnmount = () => {
+  public componentWillUnmount = () => {
     window.removeEventListener('keydown', this.closeModalOnEscape)
   }
 
-  componentDidUpdate = () => {
-    let element = document.querySelector('#modalVideo') || document.querySelector('#modalImage') || { clientHeight: 0 };
+  public componentDidUpdate = () => {
+    let element: HTMLElement | { clientHeight: number } = document.querySelector('#modalVideo') || document.querySelector('#modalImage') || { clientHeight: 0 };
     if (window.innerWidth > 1300) {
       if (this.state.height !== element.clientHeight + 20) {
         this.setHeight()
@@ -38,10 +38,10 @@ export default class Modal extends Component<ModalProps, ModalState> {
     }
   }
 
-  setHeight = () => {
+  private setHeight = () => {
     let height: number = 0
     if (window.innerWidth > 1300) {
-      const node: HTMLElement | null = document.querySelector('#modalVideo') || document.querySelector('#modalImage')
+      const node: HTMLElement | { clientHeight: number } = document.querySelector('#modalVideo') || document.querySelector('#modalImage') || { clientHeight: 0 };
       if (node) {
         height = node.clientHeight + 20
       }
@@ -51,7 +51,7 @@ export default class Modal extends Component<ModalProps, ModalState> {
     })
   }
 
-  closeModalOnEscape = (e: any) => {
+  private closeModalOnEscape = (e: any) => {
     if (e.keyCode === 27) {
       this.props.hideModal()
     }
@@ -59,7 +59,7 @@ export default class Modal extends Component<ModalProps, ModalState> {
 
 
 
-  render() {
+  public render() {
     const { project: { title, text, videoLarge, videoMedium, imgMedium, imgLarge, links }, scale } = this.props
     const { height } = this.state;
 
