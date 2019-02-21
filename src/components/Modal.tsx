@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Project } from '../types'
-import '../scss/modal.scss'
+import { Project } from '../types';
+import x from '../assets/icons/Untitled-1.png';
+import '../scss/modal.scss';
 
 interface ModalState {
   height: number
@@ -57,8 +58,6 @@ export default class Modal extends Component<ModalProps, ModalState> {
     }
   }
 
-
-
   public render() {
     const { project: { title, text, videoLarge, videoMedium, imgMedium, imgLarge, links }, scale } = this.props
     const { height } = this.state;
@@ -71,7 +70,8 @@ export default class Modal extends Component<ModalProps, ModalState> {
       figureHeight = img.clientHeight
     }
     return (
-      <section id="modal" onClick={e => e.stopPropagation()} style={{ transform: `scale(${scale.scale})`, height: height ? height : '90%' }} >
+      <section id="modal" onClick={e => e.stopPropagation()} style={{ transform: `scale(${scale.scale})`, height: height ? height : 'auto' }} >
+        <img src={x} alt="x" className="close" onClick={() => { this.props.hideModal() }} />
         <figure style={{ height: figureHeight }}>
           {
             videoLarge
@@ -83,6 +83,8 @@ export default class Modal extends Component<ModalProps, ModalState> {
                 </>
               )
           }
+
+          <div className="cover"></div>
         </figure>
         <div className="text">
           <h2>{title}</h2>

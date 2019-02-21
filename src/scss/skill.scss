@@ -18,7 +18,7 @@
 
   h1 {
     text-align: center;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: lighter;
     margin-bottom: 2.5rem;
     text-shadow: .5rem .3rem .3rem black;
@@ -27,6 +27,7 @@
   .content {
     max-width: 120rem;
     padding-bottom: 6rem;
+    padding-top: 6rem;
     min-height: 80vh;
     margin: 0 auto;
     display: flex;
@@ -69,7 +70,7 @@
   #projects {
     background: var(--dark-background);
     box-sizing: border-box;
-    min-height: 80vh;
+    min-height: 90vh;
     padding-top: 4rem;
     transition: .6s ease-in all;
     

@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
+import { preload } from './logic/logic'
 
 import webDevObject from './projectObjects/webDev';
 import adobeObject from './projectObjects/adobe';
@@ -38,11 +39,12 @@ class App extends Component<{}, { showNav: boolean }> {
   }
 
   componentDidMount = () => {
-    window.addEventListener('resize', this.setREM)
+    window.addEventListener('resize', this.setREM);
+    preload(webDevObject, adobeObject, educationObject)
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener('resize', this.setREM)
+    window.removeEventListener('resize', this.setREM);
   }
 
   setREM() {
@@ -84,7 +86,7 @@ class App extends Component<{}, { showNav: boolean }> {
                         <Route exact path="/about" component={About} />
                         <Route exact path="/webdev" render={(props) => <Page {...props} {...webDevObject} />} />
                         <Route exact path="/adobe" render={(props) => <Page {...props} {...adobeObject} />} />
-                        <Route exact path="/education" render={(props) => <Page {...props} {...educationObject} />} />
+                        <Route exact path="/teaching" render={(props) => <Page {...props} {...educationObject} />} />
                         <Route render={() => <div>Not Found</div>} />
                       </Switch>
                     </CSSTransition>

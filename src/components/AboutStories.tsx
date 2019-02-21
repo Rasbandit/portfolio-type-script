@@ -17,7 +17,7 @@ export const webDev = (
   </>
 )
 
-export const spaceCenter = (
+export const adobe = (
   <>
     <p>
       I spent most of my teens and early 20's working and volunteering at a program called the Christa McAauliffe Education Center where we would teach elementary to middle school students about space and social studies through simulated experiences. The program was run through the Utah valley school district so a large portion of our staff was volenteered based. Filling the paid posistions almost always came from the voleenteers, because runing the experience properly took a lot of training and knowlege of the equipment.
@@ -40,7 +40,7 @@ export const spaceCenter = (
 export const general = (
   <>
     <p>
-      I have always considered myself a nerd as I have been drawn to Video Games, Sci-fi, Movies and the lot. But what really drove me was sharing my love of these things with my friends and anyone else who would listen. Early on I fell in love with a game called StarCraft and it helped shape my growth in many ways. StarCraft came with software to build its own maps and I used that as a creative outlet to make your custom games within the game. This gave me great exposure to programming and was in general a great cretive outlet. The game also forced me to become very familiar with computers and how to use them quickly and it is largely because of this game is why I got the expsosure I did to computers.
+      I was born in Washington state and moved to Utah when I was 12. I have always been a bit of a nerd and enjoyed creating things and expaning my knowlege base on anything I could. I taught myslef the basics of programming through a game called StarCraft that would allow you to create your own custom maps and create triggers and events based on how the players inputs. I also dabbled in video creation by filimg family events and my familys motorized recriation activites. I have always been drawn to skills that invovle computers because of my previous experiences.
     </p>
     <p>
       Around the age of 14 my friends told me about a program in the area that essentially let you be the captain of your own star ship in a role play setting that focused on educating its participants. I fell in love with it intantly but the cutoff to attend camps was 15 and I had not had my fill at that point. So I started volenteering for the program and got exposure a multitite of different experiences, like Acting, Improv, Education, Programming, Illustratiton, Motion Graphics and story writing. Since most of the program was maintined by people under the age of 20 and largely for free I was able to pick up all those skills and practice them on my own time. I ended up volenteering around 1,000 hours of my time to that program and was very rewarded in experience because of that place.

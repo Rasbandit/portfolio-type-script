@@ -37,7 +37,8 @@ export default class ProjectsSection extends Component<projectProps, StateObj> {
   }
 
   public componentDidMount = () => {
-    this.resize()
+    setTimeout(this.resize, 0)
+    // this.resize()
     window.addEventListener('resize', this.resize)
   }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import portrait from '../assets/profile/portrait.jpg';
 
-import { webDev, spaceCenter, general } from './AboutStories'
+import { webDev, adobe, general } from './AboutStories'
 
 import '../scss/About.scss'
 
@@ -41,13 +41,13 @@ export default class About extends Component<{}, AboutState> {
             <div>
               <ul>
                 <li className={story === 'general' ? 'selected' : ''} onClick={() => this.setText('general')}>General</li>
-                <li className={story === 'web' ? 'selected' : ''} onClick={() => this.setText('web')} > Web Dev</li>
-                <li className={story === 'space' ? 'selected' : ''} onClick={() => this.setText('space')} > Space Center</li>
+                <li className={story === 'web' ? 'selected' : ''} onClick={() => this.setText('web')} >Web Dev</li>
+                <li className={story === 'adobe' ? 'selected' : ''} onClick={() => this.setText('adobe')} >Adobe</li>
               </ul>
               <section id="about-text">
                 {story === 'general' ? general : ''}
-                {story === 'space' ? spaceCenter : ''}
                 {story === 'web' ? webDev : ''}
+                {story === 'adobe' ? adobe : ''}
               </section>
             </div>
           </div>

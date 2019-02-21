@@ -18,7 +18,7 @@ export default class Nav extends Component<NavProps> {
             <NavLink to="/about" activeClassName="active" exact>About</NavLink>
             <NavLink to="/webdev" activeClassName="active">WebDev</NavLink>
             <NavLink to="/adobe" activeClassName="active">Adobe</NavLink>
-            <NavLink to="/education" activeClassName="active">Education</NavLink>
+            <NavLink to="/teaching" activeClassName="active">Teaching</NavLink>
           </nav>
           <nav className="mobile" onClick={() => this.props.toggleNav(undefined)} >
             <div className="bar"></div>
@@ -30,7 +30,7 @@ export default class Nav extends Component<NavProps> {
           <NavLink onClick={() => this.props.toggleNav(false)} to="/about" activeClassName="active" exact>About</NavLink>
           <NavLink onClick={() => this.props.toggleNav(false)} to="/webdev" activeClassName="active">WebDev</NavLink>
           <NavLink onClick={() => this.props.toggleNav(false)} to="/adobe" activeClassName="active">Adobe</NavLink>
-          <NavLink onClick={() => this.props.toggleNav(false)} to="/education" activeClassName="active">Education</NavLink>
+          <NavLink onClick={() => this.props.toggleNav(false)} to="/teaching" activeClassName="active">Education</NavLink>
         </div>
       </>
     )

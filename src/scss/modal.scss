@@ -13,19 +13,25 @@
   figure {
     width: 65%;
     position: relative;
+    box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.3);
     
     #modalVideo {
       width: 100%;
-      box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.3);
+      // box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.3);
     }
     
     img {
       width: 100%;
-      box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.3);
+      // box-shadow: .0rem .0rem .4rem .4rem rgba(0,0,0,0.3);
       position: absolute;
       top: 0;
       left: 0;
     }
+
+    .cover {
+      display: none;
+    }
+    
   }
 
   .text {
@@ -90,6 +96,15 @@
       }
     }
   }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    z-index: 4;
+  }
 }
 
 #modal-overlay {
@@ -109,7 +124,8 @@
   #modal {
     width: 95%;
     max-width: 78rem;
-    height: 90%;
+    max-height: 80%;
+    height: auto;
     background: var(--background);
     border-radius: .5rem;
     padding: 1rem;
@@ -118,12 +134,31 @@
     align-items: stretch;
     flex-direction: column;
     box-shadow: .3rem .5rem 1rem .5rem black;
+    
+    .close:hover + .cover {
+      top: 0px;
+    }
 
     figure {
       width: 100%;
-
+      overflow: hidden;
+      
       #modalVideo {
         border-radius: .5rem .5rem 0 0;
+      }
+
+      .cover {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -70px;
+        transition: .7s ease all;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.2) 10%,rgba(0,0,0,0.0) 20%);
+      }
+
+      .cover:hover {
+        top: 0px;
       }
       
     }
@@ -133,8 +168,9 @@
       padding:0;
 
       p {
-        height: 100%;
         flex: 2 0 auto;
+        margin: 1.5rem 0;
+        text-align: justify;
       }
     }
   }
