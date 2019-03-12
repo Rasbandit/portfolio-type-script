@@ -6,7 +6,7 @@ interface thisProps {
   project: Project
   x: number,
   y: number,
-  style: {opacity: number, top?: number, transform?: string},
+  style: { opacity: number, top?: number, transform?: string },
   width: number,
   height: number,
   selectProject: (title: string) => void
@@ -18,7 +18,7 @@ export default class WebDevProject extends Component<thisProps, { hover: boolean
   }
 
   render() {
-    let { project: {title, imgMedium}, style, x, y, width, selectProject } = this.props
+    let { project: { title, imgMedium }, style, x, y, width, selectProject } = this.props
     const { hover } = this.state
     let newStyle = { ...style }
     if (newStyle.transform) {
