@@ -3,14 +3,14 @@
   z-index: -2;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 101%;
   height: 100vh;
   overflow: hidden;
 
   video {
     display: block;
     position: absolute;
-    left: 50%;
+    left: 49%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
