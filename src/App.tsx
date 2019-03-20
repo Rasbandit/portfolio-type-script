@@ -8,6 +8,7 @@ import {
 
 import { preload } from './logic/logic'
 
+
 import webDevObject from './projectObjects/webDev';
 import adobeObject from './projectObjects/adobe';
 import educationObject from './projectObjects/education';
@@ -18,7 +19,7 @@ import Page from './components/Page';
 import About from './components/About';
 
 import splashImg from './assets/work/splash.jpg';
-import splash from './assets/videos/background.m4v';
+import splash from './assets/videos/background.webm';
 
 import './scss/App.scss'
 
@@ -67,7 +68,7 @@ class App extends Component<{}, { showNav: boolean }> {
       <Router>
         <>
           <div className="splash">
-            <video src={splash} poster={splashImg} autoPlay loop></video>
+            <video src={splash} autoPlay={true} loop controls={true}></video>
           </div >
           <Route
             render={({ location }) => (
