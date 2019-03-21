@@ -16,6 +16,7 @@ export type Project = {
   imgLarge?: string,
   videoMedium?: string,
   videoLarge?: string,
+  audio?: boolean,
   title: string,
   text: string,
   type: string[],

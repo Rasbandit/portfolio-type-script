@@ -111,7 +111,7 @@ const webDevCollection: Collection = {
       videoMedium: asteroidsVideoMedium,
       videoLarge: asteroidsVideoLarge,
       title: 'Asteroids',
-      text: 'I had this idea for a simple game where you could asteroids in a co-oprative way where one person could fly the ship, and another could shoot. I knew I would need to learn how exactly the HTML canvas API worked so I found a lot of tutorials and after a long time was able to build out this application. But it was only single player, so I had to do a lot of refactoring to adjust for a lot of different factors. First I needed to use sockets so that the players could have real time updates between their clients. This forced to to move most of the logic into a server and make the server into the host of the game that would broadcast out to all the connect clients what the state of the game was. Because of this I learned how to use sockets and how to do state manetment on the server over a socket connection.',
+      text: 'I had this idea for a simple game where you could asteroids in a cooperative way where one person could fly the ship, and another could shoot. I knew require the canvas API in HTML to work so I found a lot of tutorials and after a lot of studying I was able to build out this application. But it was only single player, so I had to do a lot of refactoring to make it multiplayer. First I needed to use sockets so that the players could have real time updates between their clients. This forced to to move most of the logic into a server and make the server into the host of the game that would broadcast out to all the connected clients what the state of the game was. Because of this I learned how to use sockets and how to do state management on the server over a socket connection.',
       type: ['Vanilla'],
       links: [{ icon: internetSmall, alt: "Website", text: "Website", link: 'https:asteroids.toddrasband.com/' }, { icon: gitHubSmall, alt: "github", text: "Repo", link: 'https:github.com/Rasbandit/Asteroids-canvas-sockets' }]
     },
@@ -119,7 +119,7 @@ const webDevCollection: Collection = {
       imgMedium: sarahMedium,
       imgLarge: sarahLarge,
       title: "Sarah's Paw Prints",
-      text: "I designed and created this site for a friend to showcase their art protfolio and so others could get in contact with her to commision art using NodeMailer. This was also my first attempt at actually putting a site into production so a lot of care was given to making sure the site was responsive and looked good on all screen sizes. I had to do a bit of image compressing to ensure the load times was as fast as it could be. I also built an admin interface so she could add more images by uploading them to Amazon-s3 and I keep the url's in a PostgreSQL database.",
+      text: "I designed and created this site for a friend to showcase their art portfolio and so others could get in contact with her to commission art using NodeMailer. This was also my first attempt at actually putting a site into production so a lot of care was given to making sure the site was responsive and looked good on all screen sizes. I had to do a bit of image compressing to ensure the load times was fast. I also built an admin interface so she could add more images by uploading them to Amazon S3.",
       type: ['AngularJS'],
       links: [{ icon: internetSmall, alt: "Website", text: "Website", link: 'https:sarahspawprints.toddrasband.com/' }, { icon: gitHubSmall, alt: "github", text: "Repo", link: 'https:github.com/Rasbandit/sarahs-paw-print' }]
     },
@@ -135,7 +135,7 @@ const webDevCollection: Collection = {
       imgMedium: pokemonMedium,
       imgLarge: pokemonLarge,
       title: "Pokemon Catcher",
-      text: "At DevMountain the first project we have students build we called the 'no-db' project. I created this in an evening as an example of what the project could look like. It used the Pokemon Api as its base and all the information of what pokemon was caught is stored on a server. The purpose of the project was to show of how full CRUD works using an express server.",
+      text: "At DevMountain the first project we have students build we called the 'no-db' project, which included just a font-end and a back-end, no database. I created this in an evening as an example of what the project could look like. It used the Pokemon Api as its base and all the information of what pokemon was caught is stored on a server. The purpose of the project was to show of how full CRUD works using an express server.",
       type: ['React'],
       links: [{ icon: internetSmall, alt: "Website", text: "Website", link: 'https:pokemon.toddrasband.com/' }, { icon: gitHubSmall, alt: "github", text: "Repo", link: 'https:github.com/Rasbandit/Pokemon-Catcher-No-Database' }]
     },
@@ -150,7 +150,7 @@ const webDevCollection: Collection = {
       imgMedium: threadlessMedium,
       imgLarge: threadlessLarge,
       title: "Threadless Clone",
-      text: "This was the first full stack project that I built. It used Angular 1x as the front end frame work and Node.js/express as the backend, as well as PostgreSQL as the database. I wanted to show that I could recreate a layout from an existing one using just plain HTML and CSS with out any CSS framework. Because of this I felt like my CSS skills really developed well as I used Angular's conditional classes to really show off my understanding of how those two can work together.",
+      text: "This was the first full stack project that I built. It used Angular 1x as the front end frame work and Node.js/express as the back-end, as well as PostgreSQL as the database. I wanted to show that I could recreate a layout from an existing one using just plain HTML and CSS without any CSS framework. Because of this I felt like my CSS skills really improved as I used Angular's conditional classes to really show off my understanding of how those two can work together.",
       type: ['AngularJS'],
       links: [{ icon: internetSmall, alt: "Website", text: "Website", link: 'https:threadless.toddrasband.com/' }, { icon: gitHubSmall, alt: "github", text: "Repo", link: 'https:github.com/Rasbandit/threadless-clone' }]
     }

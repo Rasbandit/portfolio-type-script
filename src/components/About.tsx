@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import portrait from '../assets/profile/portrait.jpg';
+import gitHubSmall from '../assets/icons/git-hub-small.svg';
+import portfolioSmall from '../assets/icons/portfolio-icon.svg';
+import linkedin from '../assets/icons/linked-in.svg';
 
 import { webDev, adobe, general } from './AboutStories'
 
@@ -49,6 +52,20 @@ export default class About extends Component<{}, AboutState> {
                 {story === 'web' ? webDev : ''}
                 {story === 'adobe' ? adobe : ''}
               </section>
+              <footer>
+                <a href="https://github.com/rasbandit" target="_blank" rel="noopener noreferrer">
+                  <img src={gitHubSmall} alt="" />
+                  <h3>GitHub</h3>
+                </a>
+                <a href="https://drive.google.com/drive/folders/0B2kjzXYkWALKfktWMTJCNGNGaS1fenRBQ3NZZHZ6aWN0SnVuc0J6clBZRlBSZGdNMEJtaHM?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <img src={portfolioSmall} alt="" />
+                  <h3>Full Portfolio</h3>
+                </a>
+                <a href="https://www.linkedin.com/in/toddrasband/" target="_blank" rel="noopener noreferrer">
+                  <img src={linkedin} alt="" />
+                  <h3>linkedin</h3>
+                </a>
+              </footer>
             </div>
           </div>
         </main>

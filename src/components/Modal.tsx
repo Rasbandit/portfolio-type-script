@@ -59,7 +59,7 @@ export default class Modal extends Component<ModalProps, ModalState> {
   }
 
   public render() {
-    const { project: { title, text, videoLarge, videoMedium, imgMedium, imgLarge, links }, scale } = this.props
+    const { project: { title, text, videoLarge, videoMedium, imgMedium, imgLarge, links, audio }, scale } = this.props
     const { height } = this.state;
 
     const width: number = window.innerWidth;
@@ -75,7 +75,7 @@ export default class Modal extends Component<ModalProps, ModalState> {
         <figure style={{ height: figureHeight }}>
           {
             videoLarge
-              ? <video id="modalVideo" muted src={videoUrl} poster={imgMedium} autoPlay loop />
+              ? <video id="modalVideo" muted={audio} controls={audio} src={videoUrl} poster={imgMedium} autoPlay loop />
               : (
                 <>
                   <img id="modalImage" src={imgMedium} alt={title} />

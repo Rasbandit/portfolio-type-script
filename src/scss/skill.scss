@@ -28,7 +28,7 @@
     max-width: 120rem;
     padding-bottom: 6rem;
     padding-top: 6rem;
-    min-height: 80vh;
+    min-height: 10vh;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -59,6 +59,9 @@
         h3 {
           color: var(--font-color);
           font-size: 2.2em;
+          height: 4rem;
+          display: flex;
+          align-items: center;
           text-align: center;
           font-weight: lighter;
           margin-top: .8em;
@@ -259,7 +262,7 @@
     .content {
       ul {
         li {
-          width: 12em;
+          width: 13em;
         }
       }
     }

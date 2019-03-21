@@ -102,6 +102,31 @@
           section::-webkit-scrollbar {
             width: .4rem;
           }
+
+          footer {
+            display: flex;
+            justify-content: space-around;
+            height:13%;
+            width: 85%;
+            margin:1rem 0;
+
+            a {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              cursor: pointer;
+
+              img {
+                height: 80%;
+                width: auto;
+                margin-bottom: .6rem;
+              }
+              h3 {
+                font-size: 1.7rem;
+              }
+            }
+          }
         }
       }
     }
