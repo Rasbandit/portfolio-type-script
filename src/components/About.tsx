@@ -42,15 +42,16 @@ export default class About extends Component<{}, AboutState> {
               <img src={portrait} alt="" />
             </figure>
             <div>
-              <ul>
+              {/* <ul>
                 <li className={story === 'general' ? 'selected' : ''} onClick={() => this.setText('general')}>General</li>
                 <li className={story === 'web' ? 'selected' : ''} onClick={() => this.setText('web')} >Web Dev</li>
                 <li className={story === 'adobe' ? 'selected' : ''} onClick={() => this.setText('adobe')} >Adobe</li>
-              </ul>
+              </ul> */}
               <section id="about-text">
-                {story === 'general' ? general : ''}
+                {general}
+                {/* {story === 'general' ? general : ''}
                 {story === 'web' ? webDev : ''}
-                {story === 'adobe' ? adobe : ''}
+                {story === 'adobe' ? adobe : ''} */}
               </section>
               <footer>
                 <a href="https://github.com/rasbandit" target="_blank" rel="noopener noreferrer">
